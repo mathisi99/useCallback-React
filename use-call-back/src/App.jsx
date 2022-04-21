@@ -10,7 +10,14 @@ function App() {
     backgroundColor: dark ? "#333" : "#fff",
     color: dark ? "#fff" : "#333"
   }
-  
+  /*
+  when using useCallback then when click button to toggle theme
+  "Updating Items" won't log out.
+  useCallback vs useMemo, useMemo will take the result [num, num+1, num+2]
+  but useCallback will take whole function.
+  even we set it const but when don't use useCallback / useMemo
+  this function will be re-create when others change, in this case that is toggle theme
+  */
   const getItems = useCallback(() => {
     return [num, num+1, num+2];
   }, [num])

@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 const List = ({getItems}) => {
     const [items, setItems] = useState([]);
-    //when using useCallback then when click button to toggle theme
-    //"Updating Items" won't log out
     useEffect(() => {
         setItems(getItems());
         console.log("Updating Items");
